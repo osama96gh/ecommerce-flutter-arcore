@@ -1,3 +1,7 @@
+import 'package:ecommerce_arcore/product.dart';
+import 'package:ecommerce_arcore/product_list_item.dart';
+import 'package:ecommerce_arcore/utility.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -34,10 +38,12 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: Center(
-        child: Text(
-          'hello',
-        ),
+      body: ListView.builder(
+        itemBuilder: (context, index) {
+          Product p = getTempProduct()[index];
+          return ProductListItem(p: p);
+        },
+        itemCount: getTempProduct().length,
       ),
     );
   }
