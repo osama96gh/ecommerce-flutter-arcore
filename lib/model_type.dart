@@ -1,3 +1,0 @@
-enum ModelType{
-  GLB,GLTF
-}
