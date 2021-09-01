@@ -39,11 +39,12 @@ class _ProductPageState extends State<ProductPage> {
             child: CustomScrollView(
               slivers: [
                 SliverAppBar(
+                  backgroundColor: Colors.white,
                   stretch: true,
                   pinned: true,
                   snap: false,
                   floating: false,
-                  expandedHeight: 280,
+                  expandedHeight: MediaQuery.of(context).size.width,
                   flexibleSpace: FlexibleSpaceBar(
                     centerTitle: true,
                     title: Hero(
@@ -52,9 +53,9 @@ class _ProductPageState extends State<ProductPage> {
                         widget.product.name.length <= 25
                             ? widget.product.name
                             : '${widget.product.name.substring(0, 23)}...',
-                        style: TextStyle(shadows: [
+                        style: TextStyle(color: Colors.blue.shade600, shadows: [
                           Shadow(
-                            color: Colors.black,
+                            color: Colors.white,
                             blurRadius: 8,
                           ),
                         ]),
@@ -83,7 +84,7 @@ class _ProductPageState extends State<ProductPage> {
                       ),
                       Container(
                         margin: EdgeInsets.all(16.0),
-                        padding: EdgeInsets.all(8),
+                        padding: EdgeInsets.all(12.0),
                         child: Text(
                           widget.product.description,
                           style: TextStyle(
@@ -94,9 +95,18 @@ class _ProductPageState extends State<ProductPage> {
                           ),
                         ),
                         decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(8.0),
-                            border: Border.all(color: Colors.amber, width: 2)),
+                          borderRadius: BorderRadius.circular(20),
+                          gradient: LinearGradient(
+                            colors: [
+                              Colors.blue.shade200,
+                              Colors.blue.shade100,
+                            ],
+                            begin: Alignment.bottomLeft,
+                            end: Alignment.topRight,
+                          ),
+                        ),
                       ),
+                      Divider(),
                       Container(
                         margin: EdgeInsets.only(top: 16, left: 16),
                         child: Text(
@@ -114,8 +124,16 @@ class _ProductPageState extends State<ProductPage> {
                               fontSize: 18, fontWeight: FontWeight.w600),
                         ),
                         decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(8.0),
-                            border: Border.all(color: Colors.amber, width: 2)),
+                          borderRadius: BorderRadius.circular(20),
+                          gradient: LinearGradient(
+                            colors: [
+                              Colors.blue.shade200,
+                              Colors.blue.shade100,
+                            ],
+                            begin: Alignment.bottomLeft,
+                            end: Alignment.topRight,
+                          ),
+                        ),
                       ),
                     ],
                   ),

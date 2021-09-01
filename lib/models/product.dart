@@ -1,4 +1,4 @@
-import 'model_type.dart';
+import 'enums.dart';
 
 class Product {
   String name;

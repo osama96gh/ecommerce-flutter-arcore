@@ -1,4 +1,4 @@
-import 'package:ecommerce_arcore/models/model_type.dart';
+import 'package:ecommerce_arcore/models/enums.dart';
 import 'package:ecommerce_arcore/models/product.dart';
 
 List<Product> getTempProduct() {
